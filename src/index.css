@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-container {
+    border: 2px solid greenyellow;
+    display: flex;
+    justify-content: center;
 }
+
+.app {
+    border: 2px solid red;
+    width: 30vw;
+    height: 100vh;
+}
+
+/* CitySearch Component */
+.search-bar {
+    border: 2px solid blue;
+}
+
+.search-bar input {
+    height: 3em;
+    width: 75%;
+}
+
+
+/* BasicData Component */
+.basicdata-container {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+    /* Today Temps */
+.temp-container {
+    border: 2px solid orchid;
+    width: 40%;
+    height: 8em;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+        /* Current Temp */
+.current-temp {
+    border: 2px solid yellow;
+    width: 70%;
+    height: 100%;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3em;
+}
+
+        /* Min and Max */
+.min-max {
+    border: 2px solid brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    text-align: center;
+}
+
+    /* DayTime */
+.daytime-container {
+    border: 2px solid pink;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+        /* Day */
+
+
+        /* Time */
+
+/* Current Weather Icon Component */
+.currentweathericon-container {
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+}
+
+    /* Weather Icon */
+.weather-icon {
+    border: 2px solid purple;
+    height: 30vh;
+}
+
