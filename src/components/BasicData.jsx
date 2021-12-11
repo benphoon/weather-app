@@ -1,4 +1,5 @@
 import React from "react";
+import { CurrentWeatherIcon } from "./CurrentWeatherIcon";
 import { DayTime } from "./DayTime";
 import { TodayTemps } from "./TodayTemps";
 
@@ -7,7 +8,7 @@ export class BasicData extends React.Component {
         return (
             <div className="basicdata-container">
                 <TodayTemps />
-                <DayTime />
+                <CurrentWeatherIcon />
             </div>
         )
     }
