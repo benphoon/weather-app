@@ -30,11 +30,12 @@ export class CitySearch extends React.Component {
 
     render() {
         return (
-            <div class="search-bar">
+            <div className="search-box">
                 <input
                     onChange={this.handleChange}
                     onKeyPress={this.handleKeyPress}
-                    placeholder="Search Location..."
+                    placeholder="Search..."
+                    type="text"
                 />
             </div>
         )

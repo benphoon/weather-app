@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'montserratt', sans-serif;
+}
+
+.app {
+    background-image: url('./assets/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s ease-out;
+}
+
+main {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(243, 243, 243, 0.315), rgba(75, 75, 75, 0.308));
+}
+
+main.night {
+    background-image: linear-gradient(to bottom, rgba(37, 38, 39, 0.671), rgba(15, 15, 15, 0.87))
+}
+
+/* CitySearch Component */
+.search-box {
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.search-box input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+
+    background-color: rgba(223, 221, 221, 0.897);
+    border-radius: 0px 0px 16px 16px;
+
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+    color: #202020;
+    font-size: 20px;
+
+    transition: 0.4s ease;
+}
+
+.search-box input:focus{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.basicdata-container .location {
+    color: black;
+    font-size: 32px;
+    font-weight: 500px;
+    text-align: center;
+    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
