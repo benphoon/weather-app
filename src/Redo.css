@@ -57,8 +57,60 @@ main.night {
 
 .basicdata-container .location {
     color: black;
-    font-size: 32px;
-    font-weight: 500px;
+    font-size: 36px;
+    font-weight: 700px;
     text-align: center;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+    margin-top: 6vh;
+}
+
+.basicdata-container .date {
+    text-align: center;
+}
+
+.basicdata-container .basicdata-container-two {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5vh;
+    padding: 0 30px 0 30px;
+}
+
+.basicdata-container-two .temps-container {
+    border-radius: 16px;
+    padding: 40px;
+    background-color: rgba(223, 221, 221, 0.589);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.current-temp {
+    font-size: 40px;
+
+}
+
+.basicdata-container-two .temps-container .min-max {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.basicdata-container .weather-icon {
+    height: 25vh;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 230px;
+}
+
+.forecast-card {
+    border-radius: 16px;
+    background-color: rgba(223, 221, 221, 0.589);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+
+    padding: 5px 0px;
+
+    text-align: center;
+    font-size: 10px;
 }

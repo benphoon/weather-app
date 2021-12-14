@@ -13,19 +13,23 @@ export class BasicData extends React.Component {
             let month = months[d.getMonth()]
             let year = d.getFullYear()
 
-            return `${day} ${date} ${month} ${year}`
+            return `${day}, ${date} ${month} ${year}`
         }
 
         return (
             <div className="basicdata-container">
                 <div className="location">Perth, Australia</div>
                 <div className="date">{dateBuilder(new Date())}</div>
-                <div className="current-temp">35°c</div>
-                <div className="min-max">
-                    <div className="min">19°c</div>
-                    <div className="max">35°c</div>
+                <div className="basicdata-container-two">
+                    <div className="temps-container">
+                        <div className="current-temp">35°c</div>
+                        <div className="min-max">
+                            <div className="min">19°c</div>
+                            <div className="max">35°c</div>
+                        </div>
+                    </div>
+                    <CurrentWeatherIcon />
                 </div>
-                <CurrentWeatherIcon />
             </div>
         )
     }
