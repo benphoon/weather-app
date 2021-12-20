@@ -9,19 +9,14 @@ body {
 }
 
 .app {
-    background-image: url('./assets/background2.jpg');
+    background-color: white;
     background-size: cover;
     background-position: center;
     transition: 0.4s ease-out;
 }
 
 main {
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(243, 243, 243, 0.315), rgba(75, 75, 75, 0.308));
-}
-
-main.night {
-    background-image: linear-gradient(to bottom, rgba(37, 38, 39, 0.671), rgba(15, 15, 15, 0.87))
+    max-height: 90vh;
 }
 
 /* CitySearch Component */
@@ -98,19 +93,6 @@ main.night {
     height: 25vh;
 }
 
-.forecast-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 230px;
-}
-
-.forecast-card {
-    border-radius: 16px;
-    background-color: rgba(223, 221, 221, 0.589);
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
-
-    padding: 5px 0px;
-
-    text-align: center;
-    font-size: 10px;
+footer img {
+    height: 3rem;
 }

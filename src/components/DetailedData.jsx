@@ -2,34 +2,66 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWind } from '@fortawesome/free-solid-svg-icons'
 import { faWater } from '@fortawesome/free-solid-svg-icons'
-import { faUmbrella } from '@fortawesome/free-solid-svg-icons'
 
-export class DetailedData extends React.Component {
-    render() {
-        return (
-            <div className="detaileddata-container">
-                <div id="wind">
-                    <FontAwesomeIcon icon={faWind} size="2x"/>
-                    <div id="wind-description">
-                        <p>30 kph</p>
-                        <p>South</p>
-                    </div>
-                </div>
-                <div id="humidity">
-                    <FontAwesomeIcon icon={faWater} size="2x"/>
-                    <div id="humidity-description">
-                        <p>30%</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-                <div id="rain">
-                    <FontAwesomeIcon icon={faUmbrella} size="2x" />
-                    <div id="rain-description">
-                        <p>0%</p>
-                        <p>Chance</p>
-                    </div>
+export const DetailedData = (props) => {
+    const windFinder = (props) => {
+        let windDirection = ''
+        if (props.weatherData.windDirection >= 348.75) {
+            windDirection = 'North'
+        } else if (props.weatherData.windDirection <= 11.25) {
+            windDirection = 'North'
+        } else if (props.weatherData.windDirection <= 33.75) {
+            windDirection = 'North by Northeast'
+        } else if (props.weatherData.windDirection <= 56.25) {
+            windDirection = 'Northeast'
+        } else if (props.weatherData.windDirection <= 78.75) {
+            windDirection = 'East by Northeast'
+        } else if (props.weatherData.windDirection <= 101.25) {
+            windDirection = 'East'
+        } else if (props.weatherData.windDirection <= 123.75) {
+            windDirection = 'East by Southeast'
+        } else if (props.weatherData.windDirection <= 146.25) {
+            windDirection = 'Southeast'
+        } else if (props.weatherData.windDirection <= 168.75) {
+            windDirection = 'South by Southeast'
+        } else if (props.weatherData.windDirection <= 191.25) {
+            windDirection = 'South'
+        } else if (props.weatherData.windDirection <= 213.75) {
+            windDirection = 'South by Southwest'
+        } else if (props.weatherData.windDirection <= 236.25) {
+            windDirection = 'Southwest'
+        } else if (props.weatherData.windDirection <= 258.75) {
+            windDirection = 'West by Southwest'
+        } else if (props.weatherData.windDirection <= 281.25) {
+            windDirection = 'West'
+        } else if (props.weatherData.windDirection <= 303.75) {
+            windDirection = 'West by Northwest'
+        } else if (props.weatherData.windDirection <= 326.25) {
+            windDirection = 'Northwest'
+        } else if (props.weatherData.windDirection <= 348.74) {
+            windDirection = 'North by Northwest'
+        }
+
+        return windDirection
+    }
+
+    return (
+        <div className="detaileddata-container">
+            <div id="wind">
+                <FontAwesomeIcon icon={faWind} size="2x" />
+                <div id="wind-description">
+                    <p>{props.weatherData.windSpeed} kph</p>
+                    <p>{windFinder(props)}</p>
                 </div>
             </div>
-        )
-    }
+            <div id="humidity">
+                <FontAwesomeIcon icon={faWater} size="2x" />
+                <div id="humidity-description">
+                    <p>{props.weatherData.humidity}%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+        </div>
+    )
+
 }
