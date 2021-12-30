@@ -12,14 +12,17 @@ function Redo() {
         setData({
             city: result.name,
             country: result.sys.country,
-            currentTemp: result.main.temp,
-            minTemp: result.main.temp_min,
-            maxTemp: result.main.temp_max,
-            iconPrompt: result.weather.main,
-            weatherDescription: result.weather.description,
+            currentTemp: Math.floor(result.main.temp),
+            minTemp: Math.floor(result.main.temp_min),
+            maxTemp: Math.ceil(result.main.temp_max),
+            gradientPrompt: result.weather[0].main,
+            weatherDescription: result.weather[0].description,
             humidity: result.main.humidity,
             windSpeed: result.wind.speed,
-            windDirection: result.wind.deg
+            windDirection: result.wind.deg,
+            currentTime: result.dt,
+            sunrise: result.sys.sunrise,
+            sunset: result.sys.sunset
         })
         console.log(data)
     }
@@ -27,21 +30,24 @@ function Redo() {
     return (
         <div className='app'>
             <main>
-                <CitySearch
-                    handleSearch={handleSearch}
-                />
-                <BasicData
-                    weatherData={data}
-                />
+                <div className="background-container">
+                    <CitySearch
+                        handleSearch={handleSearch}
+                    />
+                    <BasicData
+                        weatherData={data}
+                    />
+                </div>
+                <div className="divider"> </div>
                 <DetailedData
                     weatherData={data}
                 />
             </main>
             <footer>
-                <img 
+                <img
                     src={bpLogo}
                     alt="Ben Phoon Logo"
-                 />
+                />
             </footer>
         </div>
     );
@@ -51,6 +57,7 @@ export default Redo;
 
 
 // To Do
+// - Pass weather data from BasicData comp down to Weather Icon Comp OR embed WeatherIcon functionality into BasicData Comp
 // - Handle Errors
 // - Figure out time and weather icons
 // - Update UI and other data to pull in

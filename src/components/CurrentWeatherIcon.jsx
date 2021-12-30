@@ -1,17 +1,27 @@
-import React from "react";
-import Sunny from "../assets/animated/day.svg"
+import React, {useState, useEffect} from "react";
+import { dayIcons } from "./WeatherIcons";
+import { nightIcons } from "./WeatherIcons";
 
-export const CurrentWeatherIcon = (props) => {
-    const weatherDesciptions = {
-        day_clear: "../assets/animated/day.svg",
 
-    }
+export const CurrentWeatherIcon = ({ weatherData }) => {
 
-    // let weatherIcon = ()
+    const [icon, setIcon] = useState()
+    useEffect(
+        () => {
+            if (weatherData.currentTime >= weatherData.sunrise && weatherData.currentTime <= weatherData.sunset) {
+                setIcon(dayIcons[weatherData.gradientPrompt])
+            } else {
+                setIcon(nightIcons[weatherData.gradientPrompt])
+            }
+        },
+        [icon]
+    )
+
+
 
     return (
         <div className="currentweathericon-container">
-            <img className="weather-icon" src={Sunny} alt="" />
+            <img className="weather-icon" src={icon} alt="" />
         </div>
     )
 }

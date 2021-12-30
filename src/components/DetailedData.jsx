@@ -47,21 +47,29 @@ export const DetailedData = (props) => {
 
     return (
         <div className="detaileddata-container">
-            <div id="wind">
-                <FontAwesomeIcon icon={faWind} size="2x" />
-                <div id="wind-description">
-                    <p>{props.weatherData.windSpeed} kph</p>
-                    <p>{windFinder(props)}</p>
+            {(typeof props.weatherData.gradientPrompt != "undefined") ? (
+                <div>
+                    <div id="weatherDescription">
+                        <p>{props.weatherData.weatherDescription}</p>
+                    </div>
+                    <div className="detaileddata-container2">
+                        <div id="wind">
+                            <FontAwesomeIcon icon={faWind} size="lg" />
+                            <div id="wind-description">
+                                <p>{props.weatherData.windSpeed} kph</p>
+                                <p>{windFinder(props)}</p>
+                            </div>
+                        </div>
+                        <div id="humidity">
+                            <FontAwesomeIcon icon={faWater} size="lg" />
+                            <div id="humidity-description">
+                                <p>{props.weatherData.humidity}%</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div id="humidity">
-                <FontAwesomeIcon icon={faWater} size="2x" />
-                <div id="humidity-description">
-                    <p>{props.weatherData.humidity}%</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
+            ) : ("")}
         </div>
     )
-
 }

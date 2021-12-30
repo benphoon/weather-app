@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { CurrentWeatherIcon } from "./CurrentWeatherIcon";
 
-export const BasicData = (props) => {
+export const BasicData = ({weatherData}) => {
     const dateBuilder = (d) => {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -11,24 +13,36 @@ export const BasicData = (props) => {
         let month = months[d.getMonth()]
         let year = d.getFullYear()
 
-        return `${day}, ${date} ${month} ${year}`
+        return `${day}, ${date} ${month}`
     }
 
 
     return (
         <div className="basicdata-container">
-            <div className="location">{props.weatherData.city}, {props.weatherData.country}</div>
-            <div className="date">{dateBuilder(new Date())}</div>
-            <div className="basicdata-container-two">
-                <div className="temps-container">
-                    <div className="current-temp">{props.weatherData.currentTemp}°c</div>
-                    <div className="min-max">
-                        <div className="min">{props.weatherData.minTemp}°c</div>
-                        <div className="max">{props.weatherData.maxTemp}°c</div>
+            {(typeof weatherData.gradientPrompt != "undefined") ? (
+                <div>
+                    <div className="locationDate">
+                        <div className="location">{weatherData.city}, {weatherData.country}</div>
+                        <div className="date">{dateBuilder(new Date())}</div>
+                    </div>
+                    <CurrentWeatherIcon weatherData={weatherData}/>
+                    <div className="basicdata-container-two">
+                        <div className="temps-container">
+                            <div className="current-temp">{weatherData.currentTemp}°C</div>
+                            <div className="min-max">
+                                <div className="max">
+                                    <FontAwesomeIcon icon={faAngleUp} size="sm" />
+                                    <p>{weatherData.maxTemp}°C</p>
+                                </div>
+                                <div className="min">
+                                    <FontAwesomeIcon icon={faAngleDown} size="sm" />
+                                    <p>{weatherData.minTemp}°C</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <CurrentWeatherIcon weatherDescription={props.weatherData.description}/>
-            </div>
+            ) : ("")}
         </div>
     )
 
