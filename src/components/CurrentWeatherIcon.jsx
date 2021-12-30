@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { dayIcons } from "./WeatherIcons";
 import { nightIcons } from "./WeatherIcons";
 
@@ -6,22 +6,25 @@ import { nightIcons } from "./WeatherIcons";
 export const CurrentWeatherIcon = ({ weatherData }) => {
 
     const [icon, setIcon] = useState()
+
     useEffect(
         () => {
             if (weatherData.currentTime >= weatherData.sunrise && weatherData.currentTime <= weatherData.sunset) {
-                setIcon(dayIcons[weatherData.gradientPrompt])
+                setIcon(dayIcons[weatherData.gradientPrompt]);
+                console.log("it's working")
             } else {
-                setIcon(nightIcons[weatherData.gradientPrompt])
+                setIcon(nightIcons[weatherData.gradientPrompt]);
+                console.log("it's working")
             }
-        },
-        [icon]
+        }
     )
-
-
 
     return (
         <div className="currentweathericon-container">
-            <img className="weather-icon" src={icon} alt="" />
+            <img
+                className="weather-icon"
+                src={icon}
+                alt="" />
         </div>
     )
 }

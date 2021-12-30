@@ -42,13 +42,12 @@ function Redo() {
                 <DetailedData
                     weatherData={data}
                 />
-            </main>
-            <footer>
                 <img
+                    id="bpLogo"
                     src={bpLogo}
                     alt="Ben Phoon Logo"
                 />
-            </footer>
+            </main>
         </div>
     );
 }
@@ -57,11 +56,8 @@ export default Redo;
 
 
 // To Do
-// - Pass weather data from BasicData comp down to Weather Icon Comp OR embed WeatherIcon functionality into BasicData Comp
 // - Handle Errors
-// - Figure out time and weather icons
-// - Update UI and other data to pull in
-// - Complete javascript functionality
+// - How to reset icon state
 // - Hook up some sort of destination library to search bar/input (Google Places API)
 // - Build another version using Google Earth API. Have background of app be moving globe which centres on city depending on search input (which would return a value which can be plugged into background image?)
 // - Use above to do forecast
