@@ -153,10 +153,6 @@ main {
     background-color: black;
 }
 
-.detaileddata-container {
-    /* border: 2px solid pink; */
-}
-
 .detaileddata-container #weatherDescription {
     height: 4vh;
     margin-left: 8vw;
