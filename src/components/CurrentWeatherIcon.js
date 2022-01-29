@@ -11,10 +11,8 @@ export const CurrentWeatherIcon = ({ weatherData }) => {
         () => {
             if (weatherData.currentTime >= weatherData.sunrise && weatherData.currentTime <= weatherData.sunset) {
                 setIcon(dayIcons[weatherData.gradientPrompt]);
-                console.log("it's working")
             } else {
                 setIcon(nightIcons[weatherData.gradientPrompt]);
-                console.log("it's working")
             }
         }
     )

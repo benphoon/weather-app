@@ -73,3 +73,5 @@ export const DetailedData = (props) => {
         </div>
     )
 }
+
+export default DetailedData;

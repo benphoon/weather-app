@@ -1,5 +1,5 @@
 import { CitySearch } from "./components/CitySearch";
-import { BasicData } from "./components/BasicData";
+import BasicData from "./components/BasicData";
 import { useState } from "react/cjs/react.development";
 import { DetailedData } from "./components/DetailedData";
 import bpLogo from "./assets/bp-logo-black.png"
@@ -30,6 +30,7 @@ function Redo() {
     return (
         <div className='app'>
             <main>
+                <h1>WeatherApp</h1>
                 <div className="background-container">
                     <CitySearch
                         handleSearch={handleSearch}

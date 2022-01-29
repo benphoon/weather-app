@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { CurrentWeatherIcon } from "./CurrentWeatherIcon";
 
-export const BasicData = ({weatherData}) => {
+const BasicData = ({weatherData}) => {
     const dateBuilder = (d) => {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -47,3 +47,4 @@ export const BasicData = ({weatherData}) => {
     )
 
 }
+export default BasicData;
