@@ -3,12 +3,16 @@ import BasicData from "./components/BasicData";
 import { useState } from "react/cjs/react.development";
 import { DetailedData } from "./components/DetailedData";
 import bpLogo from "./assets/bp-logo-black.png"
+import { SplashScreen } from "./components/SplashScreen";
 
 
 function Redo() {
-    const [data, setData] = useState({})
+
+    const [displaySplash, setDisplaySplash] = useState(true);
+    const [data, setData] = useState({});
     const handleSearch = (result) => {
         // set state
+        setDisplaySplash(false)
         setData({
             city: result.name,
             country: result.sys.country,
@@ -27,18 +31,19 @@ function Redo() {
         console.log(data)
     }
 
+
     return (
         <div className='app'>
             <main>
-                <h1>WeatherApp</h1>
                 <div className="background-container">
-                    <CitySearch
-                        handleSearch={handleSearch}
-                    />
-                    <BasicData
-                        weatherData={data}
-                    />
                 </div>
+                <CitySearch
+                    handleSearch={handleSearch}
+                />
+                <SplashScreen display={displaySplash} />
+                <BasicData
+                    weatherData={data}
+                />
                 <div className="divider"> </div>
                 <DetailedData
                     weatherData={data}
