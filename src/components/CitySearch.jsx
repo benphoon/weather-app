@@ -1,47 +1,49 @@
-import React from "react";
-import { WeatherDisplay } from "./WeatherDisplay";
+import React, { useState } from "react";
+import api from "../api";
 
-export class CitySearch extends React.Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            city: null,
-            displayCity: false
+export const CitySearch = (props) => {
+    const [city, setCity] = useState(null)
+    const [displayCity, setDisplayCity] = useState(false)
+    const [query, setQuery] = useState('')
+    const [weather, setWeather] = useState({})
+
+    const handleErrors = (response) => {
+        let error = document.getElementsByClassName("error-message")
+
+        if (!response.ok) {
+            throw Error("what now?")
+            error.textcontent = "<span>" + "Please enter a valid location</span>"
         }
-    }
-    
-    handleKeyPress = e => {
-        if(e.key === 'Enter') {
-            this.handleClick()
-            console.log(e)
-        }
-    }
-    
-    handleChange = e => {
-        this.setState({city: e.target.value})
-        if (e.target.value === '') {
-            this.setState({displayCity: false})
-        }
+        return response;
     }
 
-    handleClick = () => {
-        this.setState({displayCity: true})
-        console.log(this.state.city)
+    const search = evt => {
+        if (evt.key === 'Enter') {
+            fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+                .then(handleErrors)
+                .then(res => res.json())
+                .then(result => {
+                    props.handleSearch(result)
+                    console.log(result)
+                })
+                .catch(error => {
+                    console.error("Location not found")
+                })
+        }
     }
-    
-    render() {
-        return(
-            <div class="search-bar">
-                <input 
-                    onChange={this.handleChange}
-                    onKeyPress={this.handleKeyPress}
-                    placeholder="Search Location"
+
+    return (
+        <div>
+            <div className="search-box">
+                <input
+                    onChange={e => setQuery(e.target.value)}
+                    value={query}
+                    onKeyPress={e => search(e)}
+                    placeholder="Search..."
+                    type="text"
                 />
-                <button onClick={this.handleClick} class="hvr-sweep-to-right">Search</button>
-                {
-                    this.state.displayCity && <WeatherDisplay city={this.state.city} />
-                }
             </div>
-        )
-    }
+            <span className="error-message"></span>
+        </div>
+    )
 }
