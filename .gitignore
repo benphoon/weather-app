@@ -21,9 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# initial builds
-App.css
-App.js
-index.css
-index.js
