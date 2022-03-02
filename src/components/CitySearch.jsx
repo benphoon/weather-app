@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import api from "../api";
 
 export const CitySearch = (props) => {
-    const [city, setCity] = useState(null)
-    const [displayCity, setDisplayCity] = useState(false)
+    // const [city, setCity] = useState(null)
+    // const [displayCity, setDisplayCity] = useState(false)
     const [query, setQuery] = useState('')
-    const [weather, setWeather] = useState({})
+    // const [weather, setWeather] = useState({})
 
     const handleErrors = (response) => {
         let error = document.getElementsByClassName("error-message")
 
         if (!response.ok) {
-            throw Error("what now?")
-            error.textcontent = "<span>" + "Please enter a valid location</span>"
+            throw Error("what now?" + error)
         }
         return response;
     }

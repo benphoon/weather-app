@@ -13,14 +13,16 @@ export const SplashScreen = ({ display }) => {
                 <div className="splashscreen-container">
                     <h1>Welcome to WeatherApp!</h1>
                     <div className="icons-container">
-                        <img src={clearDay} />
-                        <img src={rainDay} />
-                        <img src={thunderstormNight} />
-                        <img src={clearNight} />
+                        <img src={clearDay} alt="clear day"/>
+                        <img src={rainDay} alt="rainy day"/>
+                        <img src={thunderstormNight} alt="thunderstorm"/>
+                        <img src={clearNight} alt="clear night"/>
                     </div>
                 </div>
             )
         case false:
+            return null;
+        default:
             return null;
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { CurrentWeatherIcon } from "./CurrentWeatherIcon";
@@ -11,7 +11,6 @@ const BasicData = ({ weatherData }) => {
         let day = days[d.getDay()]
         let date = d.getDate()
         let month = months[d.getMonth()]
-        let year = d.getFullYear()
 
         return `${day}, ${date} ${month}`
     }
