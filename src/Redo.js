@@ -48,11 +48,13 @@ function Redo() {
                 <DetailedData
                     weatherData={data}
                 />
-                <img
-                    id="bpLogo"
-                    src={bpLogo}
-                    alt="Ben Phoon Logo"
-                />
+                <footer>
+                    <img
+                        id="bpLogo"
+                        src={bpLogo}
+                        alt="Ben Phoon Logo"
+                    />
+                </footer>
             </main>
         </div>
     );
