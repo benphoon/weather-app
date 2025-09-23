@@ -1,6 +1,6 @@
 # WeatherApp
 
-This is my first React project built with Create-react-app.
+This is a React project built with Create-react-app.
 
 It is a single page application which fetches and presents data from OpenWeatherMap API.
 
